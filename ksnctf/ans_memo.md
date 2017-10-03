@@ -30,6 +30,37 @@ $(function () {
 おお、でた。うーにゃーの実態。
 あとは`Array(70, 152,...`に対して逆の変換をしてやれば良さそう
 
+### q4
+sshすると`flag.txt`と実行ファイルあと`readme`  
+
+```
+What s your name?
+taso
+Hi, taso
+
+Do you want the flag?
+hoge
+Do you want the flag?
+yea
+Do you want the flag?
+hi
+Do you want the flag?
+aaaa
+Do you want the flag?
+yes
+Do you want the flag?
+YES
+Do you want the flag?
+no
+I see. Good bye.
+```
+この環境一通りコマンドが使えないｗ
+`anjdump`は使えたので素直に逆アセンブリ
+
+`Hi, <name>`を表示していると推測できる部分にprintf, printf putchar
+標準出力が３つ、`c言語 printf 複数 脆弱性` でググるといい感じの記事がヒット
+![http://rkx1209.hatenablog.com/entry/20120113/1326471755](http://rkx1209.hatenablog.com/entry/20120113/1326471755)
+
 ### q5
 とりあえずbase64エンコード、
 ```
