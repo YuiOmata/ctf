@@ -80,6 +80,30 @@ uuencodeっぽい文字列が出現。ビンゴ
 FLAG_FeLgP3SiAWezWPHu
 ```
 
+### q6
+`' or 1=1 -- '`
+であっさりなんか出た 
+
+```
+Congratulations!
+It's too easy?
+Don't worry.
+The flag is admins password.
+
+Hint:
+<?php...
+```
+曰くパスワードがフラグらしい。ついでにソースコードも見せてくれた  
+sqliteかーと思ってありそうなdbファイル名を試すもヒットせず。  
+  
+特に禁止文字もないしsql書き放題なんで  
+`' or 1=1 and length(pass) >= 20 -- '`
+みたいな感じで文字数を絞っていく。いい感じに文字数取得。  
+`' or 1=1 and pass glob 'FLAG_a*' --'`
+パスワードがフラグって言っているので記号は含まれていないはず、という前提で適当に絞り込んでいく  
+ここら辺で辛くなってきたのでコード書いた
+![brute_force.py](https://github.com/YuiOmata/ctf/blob/master/ksnctf/q6/brute_force.py)  
+
 ### q8
 リンクがあるので脳死してクリック、表示がやばい
 URLみたらpcapって書いてあったのでlocalに落としてwiresharkで表示した
