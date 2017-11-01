@@ -77,7 +77,6 @@ uuencodeっぽい文字列が出現。ビンゴ
 
 ```python
 >>> print dec.decode('uu')
-FLAG_FeLgP3SiAWezWPHu
 ```
 
 ### q6
